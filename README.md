@@ -29,8 +29,28 @@ source ~/.json-query/json-query.plugin.zsh
 
 #### 
 ```zsh
+> echo '[{"foo":1, "bar": "fizz"},{"foo":2, "bar": "buzz"}]' | jqx stream
+{"foo":1,"bar":"fizz"}
+{"foo":2,"bar":"buzz"}
 ```
 
 #### 
 ```zsh
+> echo '[{"foo":1, "bar": "fizz"},{"foo":2, "bar": "buzz"}]' | jqx stream | jqx fields foo
+{
+  "foo": 1
+}
+{
+  "foo": 2
+}
+```
+
+```zsh
+> echo '[{"foo":1, "bar": "fizz"},{"foo":2, "bar": "buzz"}]' | jqx stream | jqx fields bar
+{
+"bar": "fizz"
+}
+{
+"bar": "buzz"
+}
 ```
