@@ -64,7 +64,7 @@ function _jqx::stream () {
 function _jqx::fields () {
   local QUERY=""
   for FIELD in "${@}"; do
-    QUERY="$QUERY ${FIELD}  : .${FIELD},"
+    QUERY="$QUERY \"${FIELD}\"  : .${FIELD},"
   done
   jq -r "{ ${QUERY} }"
 }
